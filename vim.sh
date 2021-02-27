@@ -5,6 +5,7 @@ sed -i 's/vnoremap \$/"vnoremap \$/g' ~/.vim_runtime/vimrcs/extended.vim
 sed -i 's/inoremap \$/"inoremap \$/g' ~/.vim_runtime/vimrcs/extended.vim
 
 echo "set number
-set mouse=a" >> ~/.vimrc
+set mouse=a
+let b:autopairs_enabled=0" >> ~/.vimrc
 
 echo "Vim config complete."
