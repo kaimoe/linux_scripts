@@ -1,13 +1,20 @@
 #!/bin/bash
+function ask() {
+    read -p "$1 [Y/n]: "
+    case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
+        n|no) echo "no" ;;
+        *)     echo "yes" ;;
+    esac
+}
 
-read -p "Install fish through distro repositories first!"
+read -p "Install fish through distro repositories first! [Enter or ^C]"
 
-if [ "yes" == $(ask_yes_or_no "Edit user config?")]
+if [[ "yes" == $(ask "Edit user config?") ]]
 then
     cp -r fish/ ~/.config/
 fi
 
-if [ "yes" == $(ask_yes_or_no "Install OMF?")]
+if [[ "yes" == $(ask "Install OMF?") ]]
 then
     curl -L https://get.oh-my.fish | fish
 fi
