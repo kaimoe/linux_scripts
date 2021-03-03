@@ -1,4 +1,5 @@
 #!/bin/bash
+read -p "Install fish through distro repositories first! [Enter or ^C]"
 function ask() {
     read -p "$1 [Y/n]: "
     case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
@@ -6,8 +7,6 @@ function ask() {
         *)     echo "yes" ;;
     esac
 }
-
-read -p "Install fish through distro repositories first! [Enter or ^C]"
 
 if [[ "yes" == $(ask "Edit user config?") ]]
 then
@@ -17,6 +16,12 @@ fi
 if [[ "yes" == $(ask "Install OMF?") ]]
 then
     curl -L https://get.oh-my.fish | fish
+fi
+
+if [[ "yes" == $(ask "Install theme? (requires OMF)") ]]
+then
+    omf install boxfish
+    omf theme boxfish
 fi
 
 echo "Done. Install thefuck through repositories and then run 'omf install thefuck'"
