@@ -20,8 +20,7 @@ fi
 
 if [[ "yes" == $(ask "Install theme? (requires OMF)") ]]
 then
-    omf install boxfish
-    omf theme boxfish
+    fish -c "omf install boxfish && omf theme boxfish"
 fi
 
 echo "Done. Install thefuck through repositories and then run 'omf install thefuck'"
