@@ -14,7 +14,7 @@ function fish_prompt
     set_color normal
     echo -n @
     set_color $fish_color_host
-    echo -n Lilim
+    echo -n (hostname)
     set_color normal
     echo -n :
     set_color $fish_color_cwd

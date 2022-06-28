@@ -10,7 +10,7 @@ function ask() {
 
 if [[ "yes" == $(ask "Install custom config (mine.conf)?") ]]
 then
-    cp -r kitty ~/.config/
+    cp -r _files/kitty ~/.config/
     echo "include mine.conf" >> ~/.config/kitty/kitty.conf
 fi
 
