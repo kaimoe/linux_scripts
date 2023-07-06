@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "Install fish through distro repositories first! [Enter or ^C]"
+read -p "Install fish through distro repositories first! And inetutils or similar, for hostname. [Enter or ^C]"
 function ask() {
     read -p "$1 [Y/n]: "
     case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
@@ -25,4 +25,4 @@ then
     fish -c "omf install boxfish && omf theme boxfish"
 fi
 
-echo "Done. Install thefuck through repositories and then run 'omf install thefuck'"
+echo "Done. Do chsh -s /usr/bin fish etc, install thefuck through repositories, and then run 'omf install thefuck'"
