@@ -12,7 +12,7 @@ if [[ "yes" == $(ask "Edit user config?") ]]
 then
     cp -r _files/fish/ ~/.config/
     read -p "Shell hostname color: "
-    sed -i "s/color_host:magenta/color_host:$color/g" ~/.config/fish/fish_variables
+    sed -i "s/color_host:magenta/color_host:$REPLY/g" ~/.config/fish/fish_variables
 fi
 
 if [[ "yes" == $(ask "Install OMF?") ]]
