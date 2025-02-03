@@ -22,3 +22,6 @@ function fish_prompt
     set_color normal
     echo -n ' > '
 end
+
+fish_ssh_agent
+ssh-add ~/.ssh/github &>/dev/null
